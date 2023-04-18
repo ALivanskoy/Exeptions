@@ -25,8 +25,9 @@ public class ArrayElementsSum {
             System.out.println("Результирующий массив: " + Arrays.toString(ArrayElementsSum.ArraySum(firstArray, secondArray)));
             System.out.println();
 
-            firstArray = getRandomArray(4);
-            secondArray = getRandomArray(6);
+            int a = new Random().nextInt(1,10);
+            firstArray = getRandomArray(a);
+            secondArray = getRandomArray(10-a);
 
             System.out.println("А сейчас накосяпорим. Прогон двух массивов разной длины:");
             System.out.println("Первый массив: " + Arrays.toString(firstArray));
@@ -45,8 +46,9 @@ public class ArrayElementsSum {
 
         try {
 
-            if (firstArray.length != secondArray.length) {
-                throw new RuntimeException ("Arrays have different length");
+            if (firstArray.length > secondArray.length) {
+                throw new RuntimeException ("Arrays have different length. First array have "+firstArray.length+" elements," +
+                        " second have "+secondArray.length+" elements");
             }
 
             for (int i = 0; i < firstArray.length; i++) {
